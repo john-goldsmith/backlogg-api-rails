@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+john:
+  first_name: John
+  last_name: Goldsmith
+  email: john@backlogg.io
+  password_digest: <%= BCrypt::Password.create("Abc123123!", cost: 4) %>
+bob:
+  first_name: Bob
+  last_name: Hope
+  email: bob@domain.com
+  password_digest: <%= BCrypt::Password.create("Abc123123!", cost: 4) %>
