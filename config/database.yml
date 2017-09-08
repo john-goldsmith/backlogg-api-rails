@@ -6,7 +6,7 @@ default: &default
 
 development:
   <<: *default
-  database: backlogg_development
+  database: backlogg_users_development
   username: root
   password:
   # host: mysql # Docker host name
@@ -18,8 +18,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: backlogg_test
+  database: backlogg_users_test
 
 production:
   <<: *default
-  database: backlogg_production
+  database: backlogg_users_production

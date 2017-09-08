@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
   include Docs::User
   has_secure_password
+  has_paper_trail
+
   # before_save :downcase_email
   # before_create :generate_confirmation_instructions
 

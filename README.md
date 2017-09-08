@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Model Versioning & Auditing
+See the [Paper Trail](https://github.com/airblade/paper_trail) gem.

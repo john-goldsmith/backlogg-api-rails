@@ -32,6 +32,7 @@ gem 'sneakers'
 # gem 'responders'
 # gem 'minitest-rails'
 gem 'aws-sdk-rails' # See http://docs.aws.amazon.com/sdk-for-ruby/v2/developer-guide/rails.html
+gem 'paper_trail' # See https://github.com/airblade/paper_trail
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
