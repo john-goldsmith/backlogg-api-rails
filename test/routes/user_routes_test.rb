@@ -29,6 +29,10 @@ class UserRoutesTest < ActionDispatch::IntegrationTest
     assert_routing({ method: 'post', path: "/#{@version}/authenticate" }, { controller: "#{@version}/users", action: 'authenticate' })
   end
 
+  test "health check" do
+    assert_routing({ method: 'get', path: '/health-check' }, { controller: 'health_check', action: 'index' })
+  end
+
   test "docs" do
     assert_routing({ method: 'get', path: "/#{@version}/docs" }, { controller: "#{@version}/docs", action: 'index' })
   end

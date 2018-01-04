@@ -17,4 +17,6 @@ Rails.application.routes.draw do
     end
   # end
 
+  get 'health-check', to: 'health_check#index'
+
 end
