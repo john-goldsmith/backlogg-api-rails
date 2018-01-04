@@ -11,6 +11,7 @@ gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'mysql2'
+# gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -35,6 +36,7 @@ gem 'aws-sdk-rails' # See http://docs.aws.amazon.com/sdk-for-ruby/v2/developer-g
 gem 'paper_trail' # See https://github.com/airblade/paper_trail
 
 group :development, :test do
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # gem 'rspec'

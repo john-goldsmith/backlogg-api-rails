@@ -1,17 +1,23 @@
 default: &default
   adapter: mysql2
+  # adapter: postgresql
   pool: 5
   timeout: 5000
   encoding: utf8
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  # port: 3306
 
 development:
   <<: *default
   database: backlogg_users_development
-  username: root
-  password:
-  # host: mysql # Docker host name
-  host: localhost
-  socket: /tmp/mysql.sock
+  # username: root
+  # password:
+  # host: db # Docker host name
+  # socket: /var/run/mysqld/mysqld.sock
+  # socket: /tmp/mysql.sock
+  # protocol: tcp
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,6 +25,8 @@ development:
 test:
   <<: *default
   database: backlogg_users_test
+  # socket: /tmp/mysql.sock
+  # socket: /var/run/mysqld/mysqld.sock
 
 production:
   <<: *default
