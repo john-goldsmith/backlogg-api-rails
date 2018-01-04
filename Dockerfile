@@ -7,5 +7,5 @@ RUN gem install bundler --no-document
 RUN bundle install
 EXPOSE 3001
 # ENTRYPOINT ["bundle", "exec"]
-ENTRYPOINT ["./docker-entry.sh"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["rails", "server", "-p", "3001", "-b", "0.0.0.0"]

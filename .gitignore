@@ -23,5 +23,11 @@
 # macOS
 .DS_Store
 
+# Misc
 .env
 coverage
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

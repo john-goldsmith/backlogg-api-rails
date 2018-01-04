@@ -1,0 +1,50 @@
+# See https://docs.docker.com/compose/compose-file/
+# Run compose.sh
+version: '3'
+# networks:
+#   backlogg:
+services:
+  backlogg-db-users:
+    container_name: backlogg-db-users
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      # MYSQL_DATABASE: 'backlogg_development'
+    # volumes:
+      # - /var/lib/mysql
+  backlogg-api-users:
+    # command: bash -c "rm -f ./tmp/pids/server.pid && bundle exec rails server -p 3001 -b '0.0.0.0'"
+    container_name: backlogg-api-users
+    build: .
+    # image: backlogg/backlogg-api-users
+    # image: ruby:2.4.0
+    command: rails server -p 3001 -b '0.0.0.0'
+    volumes:
+      - ../backlogg-api-users:/backlogg/backlogg-api-users
+    ports:
+      - '3001:3001'
+    depends_on:
+      # - backlogg-db
+      - backlogg-db-users
+    links:
+      # - backlogg-db
+      - backlogg-db-users
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: ''
+    #   MYSQL_PASSWORD: ''
+    #   MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    #   MYSQL_USER: 'root'
+    #   MYSQL_DATABASE: 'backlogg_users_development'
+    # extra_hosts:
+    #   - "api.backlogg.dev:backlogg-api-gateway"
+    #   - "users.backlogg.dev:backlogg-api-users"
+    #   - "comments.backlogg.dev:backlogg-api-comments"
+    # networks:
+    #   backlogg:
+    #     aliases:
+    #       - users.backlogg.dev
