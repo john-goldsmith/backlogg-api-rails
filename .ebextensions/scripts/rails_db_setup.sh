@@ -1,3 +1,5 @@
+#! /bin/bash
+
 if [ "${PROCESS}" = "WEB" ]; then
 
   . /opt/elasticbeanstalk/hooks/common.sh
