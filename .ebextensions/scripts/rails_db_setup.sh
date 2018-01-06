@@ -13,6 +13,6 @@ if [ "${PROCESS}" = "WEB" ]; then
   done < <($EB_SUPPORT_FILES/generate_env)
 
   echo "Running database setup for aws_beanstalk/staging-app..."
-  docker run --rm "${EB_CONFIG_DOCKER_ENV_ARGS[@]}" aws_beanstalk/staging-app bundle exec rails db:setup || echo "Database setup failed."
+  sudo docker run --rm "${EB_CONFIG_DOCKER_ENV_ARGS[@]}" aws_beanstalk/staging-app bundle exec rails db:setup || echo "Database setup failed."
 fi
 true
