@@ -1,4 +1,6 @@
-# README
+# Backlogg API - Users
+
+[![Build Status](https://travis-ci.org/john-goldsmith/backlogg-api-users.svg?branch=develop)](https://travis-ci.org/john-goldsmith/backlogg-api-users)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
