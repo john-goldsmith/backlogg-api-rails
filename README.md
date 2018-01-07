@@ -1,6 +1,7 @@
 # Backlogg API - Users
 
 [![Build Status](https://travis-ci.org/john-goldsmith/backlogg-api-users.svg?branch=develop)](https://travis-ci.org/john-goldsmith/backlogg-api-users)
+[![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/backlogg-api-users/badge.svg)](https://coveralls.io/github/john-goldsmith/backlogg-api-users)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
