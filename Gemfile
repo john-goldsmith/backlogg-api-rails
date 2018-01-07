@@ -35,6 +35,12 @@ gem 'sneakers'
 gem 'aws-sdk-rails' # See http://docs.aws.amazon.com/sdk-for-ruby/v2/developer-guide/rails.html
 gem 'paper_trail' # See https://github.com/airblade/paper_trail
 
+# Fixes security vulnerability with libxml2
+# See https://github.com/john-goldsmith/backlogg-api-users/network/dependencies#30394337
+# gem 'nokogiri', '~> 1.8.1'
+
+gem 'coveralls', require: false
+
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

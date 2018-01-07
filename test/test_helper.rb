@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!('rails')
+
 require 'simplecov'
 SimpleCov.add_filter ['app/controllers/v1/concerns/docs', 'app/models/concerns/docs', 'app/services', 'app/workers', 'app/channels', 'app/jobs', 'app/mailers']
 SimpleCov.start 'rails'
