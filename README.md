@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/john-goldsmith/backlogg-api-users.svg?branch=develop)](https://travis-ci.org/john-goldsmith/backlogg-api-users)
 [![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/backlogg-api-users/badge.svg)](https://coveralls.io/github/john-goldsmith/backlogg-api-users)
+[![Maintainability](https://api.codeclimate.com/v1/badges/cb47977c7d37ac975f69/maintainability)](https://codeclimate.com/github/john-goldsmith/backlogg-api-users/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/cb47977c7d37ac975f69/test_coverage)](https://codeclimate.com/github/john-goldsmith/backlogg-api-users/test_coverage)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
