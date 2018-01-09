@@ -1,12 +1,21 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=5458a2a2e25341ef303e480f19bc390dc04ae0d0e691eafa385084ceea719067
 language: ruby
 rvm:
   - 2.4
 sudo: required
 services:
   - mysql
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - bundle exec rails db:setup
   - bundle exec rails test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   slack:
     secure: DbOQLD2TQrJ3gWrEan8HqI8Bdo7uBCg3pSaefzHNcIKCu1KOZSnASJEdjC9dyK2/5GzjYjSSYWp1UstaVaGHKOpgFy2RjanCDoJQzZpZ3UxkPM09+2Trp7AMV51Ftw7NQR4wpUFxFrUbWi25zW+2aOESmAuRlYFPREoUgBc+WbQ9mfj8c5krS/Zy8fMTnjoG+Bz36FFKnU7ATJbdAL7xcof/n5DikU+hqq4qGrfvqeLNF3mUAjRQqRNZN5H3ETBfQEHUPF9ATImcf6zHGKlWI3cXgWeHR937Ms5VuqfGBFTQvyJltc7ZRJ/WdQtq8JXC3GcuaisZElqCTJjXPZZ4rvbH7/aI0UX0gO30FMsx09AfILJdan/Sn3LtbOkXMUKi8mzNOJUWTiusvb/YBMifK5dhQQ7k4dBzv0T/AokUL50iCUOV88zJ9MxROS636sHB9JWe1HEzicOvVhGJ/gc8tsLM7nFq6xHYfGZteReG77EFH3KOLOkhg/NeAoZuroAtZqeltGppSSFGpV8N5JxHPk2MppfHr4rQKK64IfMAnfnWgaCjPSrlSpEksF/by04muJeMAH1EEu8dIJDVBJl3/fDj3E6Q3l98tk2RuX2150YBpr0dqHv2X3OUoj8YZmx+LPvA860B8dqw3FKlg2EzywZajKJ+VGaE/Vgp8bm17RQ=
